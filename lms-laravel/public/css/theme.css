@@ -1,0 +1,73 @@
+/* 🌗 Theme Styles */
+
+/* Dark Mode Base */
+.dark-mode {
+  background-color: #121212 !important;
+  color: #f1f1f1 !important;
+}
+
+/* Navbar */
+.dark-mode .navbar {
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+}
+
+/* Cards */
+.dark-mode .card {
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+}
+
+/* Tables */
+.dark-mode .table {
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+}
+.dark-mode .table thead {
+  background-color: #2c2c2c !important;
+}
+
+/* Dropdown */
+.dark-mode .dropdown-menu {
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+}
+.dark-mode .dropdown-item {
+  color: #f1f1f1 !important;
+}
+.dark-mode .dropdown-item:hover {
+  background-color: #333 !important;
+}
+
+/* Buttons */
+.dark-mode .btn-outline-light {
+  border-color: #f1f1f1 !important;
+  color: #f1f1f1 !important;
+}
+
+/* Default Light Theme */
+.theme-table {
+  background-color: #ffffff;
+  color: #212529;
+}
+
+.theme-table thead {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* Dark Theme */
+body.dark-theme .theme-table {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+body.dark-theme .theme-table thead {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+body.dark-theme .card {
+  background-color: #2b3035;
+  color: #ffffff;
+}
