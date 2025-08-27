@@ -45,7 +45,9 @@ class LoanController extends Controller
     /**
      * Store a newly created loan.
      */
- public function store(Request $request)
+ // app/Http/Controllers/LoanController.php
+
+public function store(Request $request)
 {
     $request->validate([
         'book_id'    => 'required|exists:books,id',
@@ -54,28 +56,31 @@ class LoanController extends Controller
         'return_date'=> 'required|date|after_or_equal:loan_date',
     ]);
 
-    // ✅ Restrict student to max 3 active loans
     $activeLoansCount = Loan::where('student_id', $request->student_id)
         ->where('status', 'active')
         ->count();
 
     if ($activeLoansCount >= 3) {
-        return redirect()->back()
+        // ✅ Return as a validation error bound to student_id
+        return back()
             ->withInput()
-            ->with('loan_limit_warning', 'This student already has 3 active loans. Cannot issue more books.');
+            ->withErrors(['student_id' => 'This student already has 3 active loans. Cannot issue more books.']);
     }
 
     Loan::create([
-        'book_id'    => $request->book_id,
-        'student_id' => $request->student_id,
-        'loan_date'  => $request->loan_date,
-        'return_date'=> $request->return_date,
-        'status'     => 'active',
-        'late_fee'   => 0,
+        'book_id'     => $request->book_id,
+        'student_id'  => $request->student_id,
+        'loan_date'   => $request->loan_date,
+        'return_date' => $request->return_date,
+        'status'      => 'active',
+        'late_fee'    => 0,
     ]);
 
-    return redirect()->route('loans.index')->with('success', 'Borrowed book record created successfully.');
+    return redirect()
+        ->route('loans.index')
+        ->with('success', 'Borrowed book record created successfully.');
 }
+
 
 
 

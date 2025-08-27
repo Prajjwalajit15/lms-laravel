@@ -7,7 +7,7 @@
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="mb-0"><i class="bi bi-journal-text me-2"></i> Borrowed Books</h1>
     <a href="{{ route('loans.add') }}" class="btn btn-primary">
-      <i class="bi bi-plus-lg me-1"></i> New Borrowed Books
+      <i class="bi bi-plus-lg me-1"></i>Borrow New Book
     </a>
   </div> 
   
